@@ -1,0 +1,30 @@
+<h2 class="page-header">Mitt Konto</h2>
+<img class="img-responsive center-block" src="/<%= user.avatar%>" style="width: 300px">
+
+<form method="post" action="/users/myAccount/edit" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Namn</label>
+        <input type="text" class="form-control" placeholder="Namn" name="name" value="<%= user.name%>">
+    </div>
+    <div class="form-group">
+        <label>Användarnamn</label>
+        <input type="text" class="form-control" placeholder="Användarnamn" name="username" value="<%= user.username%>">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="Email" name="email" value="<%= user.email%>">
+    </div>
+    <div class="form-group">
+        <label>Lägg till bild</label>
+        <input class="form-control" type="file" name="avatar">
+    </div>
+    <button type="submit" class="btn btn-default">Spara</button>
+</form>
+
+<button type="button" ><a href="/users/register"> Registrera konto!</a></button>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>

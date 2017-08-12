@@ -1,0 +1,30 @@
+{
+  "name": "koncept",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "bootstrap-select": "^1.12.3",
+    "connect-flash": "*",
+    "cookie-parser": "~1.4.3",
+    "cors": "*",
+    "debug": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-messages": "^1.0.1",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "multer": "^1.3.0",
+    "node-localstorage": "^1.3.0",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "serve-favicon": "*"
+  }
+}

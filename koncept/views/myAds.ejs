@@ -1,0 +1,11 @@
+<h2 class="page-header">Mina Annonser</h2>
+<a href="/users/newAd" class="btn btn-success">Skapa Ny Annons</a>
+<ul class="list-group">
+    <%for(i = 0; i < ads.length; i++){%>
+    <a href="/users/allAdds/singleAdd/<%=ads[i]._id%>" class="list-group-item">
+        <h4 class="list-group-item-heading"><%= ads[i].city%></h4>
+        <p class="list-group-item-text"><%= ads[i].description %></p>
+        <p class="list-group-item-text"><%= ads[i]._id%></p>
+    </a>
+    <%}%>
+</ul>

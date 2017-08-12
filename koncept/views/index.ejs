@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>WORK BITCH</title>
+    <% include includesHead.ejs %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <div class="container">
+      <%- messages('message', locals) %>
+      <div class="header clearfix">
+          <nav>
+              <ul class="nav nav-pills pull-right">
+                  <%if(!user){%>
+                  <li role="presentation"><a href="/users/login">Login</a></li>
+                  <li role="presentation"><a href="/users/register">Register</a></li>
+                  <%}%>
+                  <%if(user){%>
+                  <li role="presentation"><a href="/">Mitt Konto</a></li>
+                  <li role="presentation"><a href="/users/MyAds">Mina Annonser</a></li>
+                  <li role="presentation"><a href="/users/allAdds">Alla Annonser</a></li>
+                  <li role="presentation"><a href="/users/logout">Logga Ut</a></li>
+                  <%}%>
+              </ul>
+          </nav>
+          <h3 class="text-muted">Work Bitch!</h3>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-12">
+              <!--<%if(success_msg){%>
+                <div class="alert alert-success"><%= success_msg%></div>
+              <%}%>
+              <%if(error_msg){%>
+              <div class="alert alert-danger"><%= error_msg%></div>
+              <%}%>
+              <%if(error){%>
+              <div class="alert alert-danger"><%= error%></div>
+              <%}%>-->
+
+            <%- include(page)%>
+          </div>
+      </div>
+
+      <footer class="footer">
+          <p>&copy; 2016 Work Bitch, Inc.</p>
+      </footer>
+
+  </div> <!-- /container -->
+
+    <!--<h1>INSTANT WORK</h1>
+    <p>Welcome to INSTANT WORK </p>
+    <button type="button" ><a href="/register"> Registrera konto!</a></button>
+
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+    <button id="testing">testar skit</button>
+
+    <p id="demo"></p>
+  <p id="demo2"></p>-->
+    <!--<script src="http://maps.google.com/maps/api/geocode/json?address=loggatan16%20Sweden"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/javascripts/script.js"></script>
+  <% include includesBody.ejs%>
+  </body>
+</html>

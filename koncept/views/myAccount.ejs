@@ -1,0 +1,26 @@
+<h2 class="page-header">Mitt Konto</h2>
+<img class="img-responsive center-block" src="/<%= user.avatar%>" style="width: 300px">
+<form>
+    <div class="form-group">
+        <label for="name">Namn</label>
+        <input class="form-control" id="disabledName" type="text" value="<%=user.name%>" disabled>
+    </div>
+    <div class="form-group">
+        <label for="email">E-post</label>
+        <input class="form-control" id="disabledName" type="text" value="<%=user.email%>" disabled>
+    </div>
+    <div class="form-group">
+        <label for="username">Användarnamn</label>
+        <input class="form-control" id="disabledName" type="text" value="<%=user.username%>" disabled>
+    </div>
+</form>
+
+<a class="btn btn-default" href="/users/myAccount/edit">Redigera Profil</a> <br>
+
+<!--<button type="button" ><a href="/users/register"> Registrera konto!</a></button>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>-->

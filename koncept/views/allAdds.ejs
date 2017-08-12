@@ -1,0 +1,61 @@
+<h2 class="page-header">Alla Annonser</h2>
+<!--<button id="filter-btn" type="button" class="btn btn-primary">Filter</button>
+<div style="display: none; margin-right: 100%" id="filter-dropdown" class="dropdown">
+    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">Stad<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+
+    </ul>
+</div>-->
+<label for="selectStad">Välj Stad</label>
+<select onchange="myFunction()" id="selectStad" class="form-control" title="Välj Stad">
+    <%for(i = 0; i < cities.cities.length; i++){%>
+        <option><%= cities.cities[i]%></option>
+    <%}%>
+</select>
+<ul id="selectStadUL" class="list-group">
+    <%for(i = 0; i < adds.length; i++){%>
+    <li style="list-style: none;">
+    <a href="/users/allAdds/singleAdd/<%=adds[i]._id%>" class="list-group-item">
+        <h4 class="list-group-item-heading"><%= adds[i].city%></h4>
+        <p class="list-group-item-text"><%= adds[i].description %></p>
+        <p class="list-group-item-text"><%= adds[i]._id%></p>
+    </a></li>
+    <%}%>
+</ul>
+
+<script>
+    /* extremt fult lösning för att ladda in senast vald stads annonser. Ska komma på ett bättre sätt */
+   window.onload = function () {
+        let oldVald = $('select#selectStad').val();
+        console.log(oldVald);
+        $('#selectStad').val(oldVald);
+        myFunction();
+    }
+    function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myInput');
+        filter =$('#selectStad :selected').text().toUpperCase();  <!--input.value.toUpperCase();-->
+        ul = document.getElementById("selectStadUL");
+        li = ul.getElementsByTagName('li');
+
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if(filter === 'ALLA'){
+                li[i].style.display = "";
+            }
+            else if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    
+    function myDerp() {
+        var test = $('#selectStad :selected').text().toUpperCase();
+        console.log(test);
+    }
+</script>

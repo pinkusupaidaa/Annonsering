@@ -1,0 +1,45 @@
+<form method="post" action="/users/allAdds/singleAdd/edit/<%= oneAdd._id%>" enctype="multipart/form-data">
+    <div class="form-group">
+        <select type="text" class="form-control" name="city" placeholder="Stad" >
+            <%for(i = 0; i < cities.cities.length; i++){%>
+            <option><%= cities.cities[i]%></option>
+            <%}%>
+        </select>
+        <!--<label>Stad</label>
+        <input type="text" class="form-control" name="city" placeholder="Stad" value="<%=oneAdd.city%>">-->
+    </div>
+    <label for="sel1">Kategori</label>
+    <select class="form-control" name="category" title="Välj Kategori" id="sel1">
+        <option>Bil & Motor</option>
+        <option>Catering</option>
+        <option>Data</option>
+        <option>Ekonomi</option>
+        <option>Flytt & Transport</option>
+        <option>Hantverkare</option>
+        <option>Hundvakt & Djurskötsel</option>
+        <option>Kosmetik & Hudvård</option>
+        <option>Musik & Underhållning</option>
+        <option>Städning</option>
+        <option>Trädgård & Markarbeten</option>
+        <option>Undervisning</option>
+    </select>
+    <!--<div class="form-group">
+        <label>Kategori</label>
+        <input type="text" class="form-control" name="category" placeholder="Kategori">
+    </div>-->
+    <div class="form-group">
+        <label>Beskrivning</label>
+        <textarea class="form-control" name="description" placeholder="Beskriv annonsen här"><%=oneAdd.description%></textarea>
+    </div>
+    <%if(oneAdd.images.length > 0){%>
+        <%for(i = 0; i < oneAdd.images.length; i++){%>
+        <div class="form-group">
+            <label>Ändra Bild</label>
+            <input class="form-control" type="file" name="image<%= i + 1%>">
+            <div class="img-responsive">
+                <img src="/images/<%= oneAdd.images[i]%>" style="width: 60%; position: inherit">
+            </div>
+        </div>
+        <%}}%>
+    <button type="submit" class="btn btn-default">Spara</button>
+</form>
